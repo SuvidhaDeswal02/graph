@@ -1,0 +1,57 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            }
+        },
+        {
+            "label": "compile and run",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "dependsOrder": "sequence",
+            "dependsOn": "compile",
+            "runOptions": {
+                "runOn": "default"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}",
+                "shell": {
+                    "executable": "cmd.exe",
+                    "args": ["/c"]
+                }
+            },
+            "windows": {
+                "command": "${fileBasenameNoExtension}.exe < input.txt > output.txt"
+            },
+            "linux": {
+                "command": "./${fileBasenameNoExtension} < input.txt > output.txt"
+            },
+            "osx": {
+                "command": "./${fileBasenameNoExtension} < input.txt > output.txt"
+            }
+        }
+    ]
+}
