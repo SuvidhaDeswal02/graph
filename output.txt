@@ -1,5 +1,1 @@
-Node1: 2 3 5
-Node2: 1 4 3
-Node3: 2 1 4 5
-Node4: 2 3
-Node5: 1 3
+
